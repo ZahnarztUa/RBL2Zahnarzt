@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейд-боси</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; background: #101820; color: #fff; }
+    h1 { color: #00bfff; }
+    .boss { margin: 20px; }
+    button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Рейд-боси Lineage II</h1>
+  <div class="boss">
+    <p><b>Baium</b></p>
+    <button onclick="respawn('Baium')">Вбито</button>
+    <p id="Baium-time"></p>
+  </div>
+
+  <script>
+    function respawn(name) {
+      const now = new Date();
+      const respawn = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+      document.getElementById(`${name}-time`).textContent =
+        `З’явиться о ${respawn.toLocaleTimeString('uk-UA', {hour: '2-digit', minute: '2-digit'})}`;
+    }
+  </script>
+</body>
+</html>
